@@ -45,6 +45,8 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.room:room-runtime:2.5.1")
+    implementation(libs.androidx.junit.ktx)
+    testImplementation("junit:junit:4.12")
     kapt("androidx.room:room-compiler:2.5.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

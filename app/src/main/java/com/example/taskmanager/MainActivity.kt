@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var taskViewModel: TaskViewModel
     private lateinit var adapter: TaskAdapter
-    private lateinit var database: AppDatabase
+    private lateinit var database: TaskDatabase
     private lateinit var taskDao: TaskDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        database = AppDatabase.getDatabase(this)
+        database = TaskDatabase.getDatabase(this)
         taskDao = database.taskDao()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
