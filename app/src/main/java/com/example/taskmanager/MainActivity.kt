@@ -1,6 +1,7 @@
 package com.example.taskmanager
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Spinner
@@ -63,6 +64,15 @@ class MainActivity : AppCompatActivity() {
         val descriptionInput = dialogBinding.findViewById<EditText>(R.id.etTaskDescription)
         val prioritySpinner = dialogBinding.findViewById<Spinner>(R.id.spinnerPriority)
         val completedCheckbox = dialogBinding.findViewById<CheckBox>(R.id.cbCompleted)
+
+        val priorityList = listOf("High", "Medium", "Low")
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            priorityList
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        prioritySpinner.adapter = adapter
 
         task?.let {
             titleInput.setText(it.title)
